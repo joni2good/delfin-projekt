@@ -6,8 +6,8 @@ public class Team {
     ArrayList<Member> memberList = new ArrayList<Member>();
     boolean teamType; //true for voksne
     
-    //hold bliver initialiseret i main, og alle der er aktive konkurrance swimmere burde komme på et hold.
-    //man kan kun fjerne dem fra deres hold permanent ved at ændre deres konkurrance variabel.
+    //hold bliver initialiseret i main, og alle der er aktive konkurrance swimmere burde komme pÃ¥ et hold.
+    //man kan kun fjerne dem fra deres hold permanent ved at Ã¦ndre deres konkurrance variabel.
     
     public Team(ArrayList<Member> clubListMembers, boolean teamType){
         int Age = 18;
@@ -15,64 +15,53 @@ public class Team {
             for (Member member : clubListMembers){
                 if (!member.getMemberType()){
                     continue;
-                }
-                else if (member.getAge() < 18){
+                }else if (member.getAge() < 18){
                     continue;
-                }
-                else {
+                }else {
                     memberList.add(member);
                 }
             }            
-        }
-        else {
+        }else {
             for (Member member : clubListMembers){
                 if (!member.getMemberType()){
                     continue;
-                }
-                else if (!(member.getAge() < 18)){
+                }else if (!(member.getAge() < 18)){
                     continue;                
-                }
-                else {
+                }else {
                     memberList.add(member);
                 }
             }
         }     
     }
     
-  
-    
     public void addMember(Member member) {
-    //er den er metode nødvendig? De blir smidt på et hold hvis de er
-    //aktive konkurrance swimmers. 
+        //er den er metode nÃ¸dvendig? De blir smidt pÃ¥ et hold hvis de er
+        //aktive konkurrance swimmers. 
     
         if (!member.getMemberType()){
-            System.out.println("Medlemmet er ikke aktiv");
+            System.out.println("Member isn't active");
             return;
         }
         if (teamType){
             if (member.getAge() < 18){
                 return;
-            }
-            else {
+            }else {
                 memberList.add(member);
             }
-        }
-        else {
+        }else {
             if (!(member.getAge() < 18)){
                 return;
-            }
-            else {
+            }else {
                 memberList.add(member);
             }
         }
     }
     
     public void removeMember(Member member) {
-        //try/catch hvis de ikke er med på holdet.
+        //try/catch hvis de ikke er med pÃ¥ holdet.
         try {
             memberList.remove(member);
-        }
-        catch (Exception e){
+        }catch (Exception e){
             return;
         }
     }

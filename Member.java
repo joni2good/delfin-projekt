@@ -8,9 +8,8 @@ public class Member {
     int age;
     int debt;
     int stanCont = 500;
-    boolean memberType; //true for konkurrance!
+    boolean memberType; //true for konkurrence!
     boolean activityType; 
-    
     Trainer trainer;
     
     public Member(String name, int age, boolean memberType, boolean activityType) {
@@ -22,6 +21,7 @@ public class Member {
         this.activityType = activityType;
         calcCont();
     }
+    
     public Member(String name, int age, boolean memberType, boolean activityType, Trainer trainer) {
         this.count++;
         this.memberID = count;
@@ -34,14 +34,14 @@ public class Member {
     }
     
     public Member(String info) {
-        
         Scanner scan = new Scanner(info);
         while (scan.hasNext()) {
             if (scan.hasNextInt()) {
                 break;
             } 
             this.name += scan.next() + " ";
-        }this.name = this.name.substring(0, name.length() - 1);
+        }
+        this.name = this.name.substring(0, name.length() - 1);
         this.memberID = scan.nextInt();
         this.age = scan.nextInt();
         this.memberType = scan.next().equals("true");
@@ -75,7 +75,6 @@ public class Member {
     public void setActivityType(boolean type) {
         activityType = type;
     }
-    
   
     public void setTrainer(Trainer trainer) {
         this.trainer = trainer;
@@ -120,5 +119,4 @@ public class Member {
     public String toString() {
         return this.name;
     }
-    
 }

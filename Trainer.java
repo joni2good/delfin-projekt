@@ -8,10 +8,7 @@ public class Trainer {
     public Trainer(String name) {
         this.name = name;
     }
-    
-  
-  
-    
+
     public ArrayList<Member> getSwimmers() {
         return swimmers;
     }
